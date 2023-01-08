@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+  <style>
+    .card:hover{
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+        height: auto;
+        z-index: 1;
+        position:relative;
+    }
+    .card:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        height: 5em;
+        width: 100%;
+    }
+    .card {
+        background-color: dimgray;
+        color: white;
+    }
+    a, a:hover, a:focus, a:active {
+        text-decoration: none;
+        color: inherit;
+    }
+  </style>
+<body>
+  <h1>Willkommen in unserem Webshop!</h1>
+
+  <p>Hier unsere Produkte:</p>
+
+  {% set cardwidth = "24rem" %}
+  {% set cardheight = 36 %}
+
+  <div class="row">
+    <div class="col">
+        <a href="product1">
+            <div class="card col" style="width: {{cardwidth}}; height: {{cardheight}}rem; float:left; margin:10px; border:none;">
+                <img src="C:/Users/Tom/Documents/Studium/EWif/webshop/files/1.jpg" class="card-img-top" alt="Kein Bild" style="width: {{cardwidth}};">
+                {%set bodyheight = cardheight / 5 * 3 %}
+                <div class="card-body" style="overflow-y:scroll;height:{{bodyheight}}rem">
+                    <h5 class="card-title">Katze</h5>
+                    <i class="card-text">süß</i>
+                    <p></p>
+                    <p class="card-text"><b>Merkmale:</b> Niedlich und isst gern Fisch</p>
+                </div>
+            </div>
+        </a>
+    </div>
+  </div>
+
+
+
+  {% endblock %}
+
