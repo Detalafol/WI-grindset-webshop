@@ -1,1 +1,1 @@
-# WI-grindset-webshop
+# WI-Grindset-webshop
