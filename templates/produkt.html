@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+  <style>
+    .card:hover{
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+        height: auto;
+        z-index: 1;
+        position:relative;
+    }
+    .card:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        height: 5em;
+        width: 100%;
+    }
+    .card {
+        background-color: dimgray;
+        color: white;
+        padding: 0;
+        padding-bottom: 33%;
+    }
+    .card-image-top{
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        width: 100%;
+        object-fit: cover;
+    }
+    a, a:hover, a:focus, a:active {
+        text-decoration: none;
+        color: inherit;
+    }
+  </style>
+<body>
+  <h1>Katze</h1>
+
+  <!-- Produkte in Reihen und Zellen -->
+  <img src="https://images.pexels.com/photos/126407/pexels-photo-126407.jpeg" alt="Kein Bild" style="width: 100%">
+  <i>süß</i>
+  <p></p>
+  <p> Niedlich und isst gern Fisch</p>
+
+  {% endblock %}
+

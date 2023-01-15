@@ -37,15 +37,9 @@
 
 <body>
   {% block navbar %}
-  <nav class="navbar navbar-dark navbar-expand-lg bg-dark">
+  <nav class="navbar navbar-dark navbar-expand-sm bg-dark">
     <div class="container">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggler"
-        aria-controls="navbarToggler" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>&nbsp;Navigation
-      </button>
-
       <a class="navbar-brand" href="{{url_for('home')}}">Webshop</a>
-      <div class="collapse navbar-collapse" id="navbarToggler">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
             <a class="nav-link active" aria-current="page" href="{{url_for('home')}}">Angebote</a>
@@ -57,7 +51,6 @@
             <a class="nav-link" href="{{url_for('about')}}">Über uns</a>
           </li>
         </ul>
-      </div>
     </div>
   </nav>
   {% endblock %}

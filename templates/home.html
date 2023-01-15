@@ -19,6 +19,14 @@
     .card {
         background-color: dimgray;
         color: white;
+        padding: 0;
+        padding-bottom: 33%;
+    }
+    .card-image-top{
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        width: 100%;
+        object-fit: cover;
     }
     a, a:hover, a:focus, a:active {
         text-decoration: none;
@@ -30,16 +38,15 @@
 
   <p>Hier unsere Produkte:</p>
 
-  {% set cardwidth = "24rem" %}
-  {% set cardheight = 36 %}
-
+  <!-- Produkte in Reihen und Zellen -->
   <div class="row">
-    <div class="col">
-        <a href="product1">
-            <div class="card col" style="width: {{cardwidth}}; height: {{cardheight}}rem; float:left; margin:10px; border:none;">
-                <img src="C:/Users/Tom/Documents/Studium/EWif/webshop/files/1.jpg" class="card-img-top" alt="Kein Bild" style="width: {{cardwidth}};">
-                {%set bodyheight = cardheight / 5 * 3 %}
-                <div class="card-body" style="overflow-y:scroll;height:{{bodyheight}}rem">
+    {% for i in range(3) %}
+    <div class="col-lg-4">
+        <a href="{{url_for('produkt')}}">
+            <div class="card col" style="float:left; margin:10px; border:none;">
+                <img src="https://images.pexels.com/photos/126407/pexels-photo-126407.jpeg"
+                         class="card-image-top" alt="Kein Bild">
+                <div class="card-body" style="overflow-y:scroll">
                     <h5 class="card-title">Katze</h5>
                     <i class="card-text">süß</i>
                     <p></p>
@@ -48,9 +55,8 @@
             </div>
         </a>
     </div>
+    {% endfor %}
   </div>
-
-
 
   {% endblock %}
 
