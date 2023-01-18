@@ -17,7 +17,7 @@ def about():
 
 @app.route('/produkt')
 def produkt():
-    return render_template("produkt.html", title="Warenkorb")
+    return render_template("produkt.html", title="Detailansicht")
 
 if __name__ == '__main__':
     app.run()

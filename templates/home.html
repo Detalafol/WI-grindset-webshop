@@ -2,10 +2,9 @@
 
 {% block app_content %}
   <style>
-    .card:hover{
+    .vert-card:hover, .card-img-left:hover{
         transform: scale(1.05);
         box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
-        height: auto;
         z-index: 1;
         position:relative;
     }
@@ -20,13 +19,50 @@
         background-color: dimgray;
         color: white;
         padding: 0;
-        padding-bottom: 33%;
+        float:left;
+        margin:10px;
+        border:none;
+        height: 100%;
     }
     .card-image-top{
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        width: 100%;
+        /*border-top-left-radius: 5px;
+        border-top-right-radius: 5px;*/
+        height: 60%;
         object-fit: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .card-image-top-img, .card-img-left{
+        box-shadow: inset 5px 0px 5px #222, -5px 0px 5px #222;
+        height: 100%;
+    }
+    .card-img-left{
+        height: 100%;
+        width: auto;
+        object-fit: cover;
+    }
+    .row{
+        height: 30rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    [class*="col-"] {
+        height: 100%;
+    }
+    .img-box{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 30%;
+        border: solid thin #555;
+        border-radius: 5px
+    }
+    .nachschlagen{
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
     }
     a, a:hover, a:focus, a:active {
         text-decoration: none;
@@ -38,25 +74,184 @@
 
   <p>Hier unsere Produkte:</p>
 
-  <!-- Produkte in Reihen und Zellen -->
   <div class="row">
-    {% for i in range(3) %}
+      <div class="col-lg-12 horiz-card">
+          <div class="card horiz-card d-flex flex-row" style="width: 100%">
+              <div class="img-box">
+                <img src="https://i.imgur.com/vM1QX6w.jpeg" class="card-img-left" alt="Card Image" style="height: 100%;">
+              </div>
+              <div class="card-body" style="width: 70%;">
+                <h5 class="card-title">The Sigma Mindest</h5>
+                <p style="font-size: 12px;">Andy Gate</p>
+                <i>
+                  Entscheidungsfindung, Persönlichkeitsentwicklung, Menschenführung, Produktivität, Denkweise-Optimierung
+                </i>
+                <p class="card-text">
+                  <br>
+                    Erfahren Sie in "The Sigma Mindset" wie Sie Ihr Potenzial voll ausschöpfen und effektiver als je zuvor arbeiten können. Dieses Buch zeigt Ihnen, wie Sie Ihre Fähigkeiten und Ihre Denkweise optimieren, um erfolgreicher in Beruf und Privatleben zu sein. Lernen Sie, wie Sie Ziele erreichen, Probleme lösen und Ihre Träume verwirklichen können, indem Sie die Methoden der Sigma-Denkweise anwenden. Beginnen Sie jetzt Ihre Reise zum Erfolg mit "The Sigma Mindset".
+                </p>
+                <a href="#" class="btn btn-primary nachschlagen">Nachschlagen</a>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-lg-12">
+          <div class="card horiz-card d-flex flex-row" style="width: 100%">
+              <div class="img-box">
+                <img src="https://i.imgur.com/1dyulDD.jpeg" class="card-img-left" alt="Card Image" style="height: 100%">
+              </div>
+              <div class="card-body" style="width: 70%;">
+                <h5 class="card-title">Sigma Male Theory</h5>
+                <p style="font-size: 12px;">Thomas Drew</p>
+                <i>Sigma Denkweise, Selbstoptimierung, Erfolgsstrategien, Zielerreichung, Problemlösung</i><br>
+                <p class="card-text">
+                  <br>
+                    Entdecken Sie die Welt des Sigma Male in "Sigma Male Theory". Dieses Buch untersucht die Charakteristika und Verhaltensweisen von Männern, die sich nicht in die traditionellen Rollen von Alpha- und Beta-Männern einordnen. Es erklärt, wie Sigma-Männer ihre Unabhängigkeit und Selbstbestimmung leben und trotzdem erfolgreich in ihrem Beruf und ihren Beziehungen sind. Lernen Sie, wie Sie Ihre Stärken als Sigma Male nutzen und sich von gängigen gesellschaftlichen Erwartungen befreien können, mit "Sigma Male Theory".
+                </p>
+                <a href="#" class="btn btn-primary nachschlagen">Nachschlagen</a>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-lg-12">
+          <div class="card horiz-card d-flex flex-row" style="width: 100%">
+              <div class="img-box">
+                <img src="https://i.imgur.com/4hNf7jO.jpeg" class="card-img-left" alt="Card Image" style="height: 100%">
+              </div>
+              <div class="card-body" style="width: 70%;">
+                <h5 class="card-title">Warum Wirtschaftsinformatik?</h5>
+                <p style="font-size: 12px;">Mandrew Mate</p>
+                <i>Träume verwirklichen, Unabhängigkeit, Selbstbestimmung, Karriere, Persönliches Wachstum</i><br>
+                <p class="card-text">
+                  <br>
+                    Verstehen Sie die Bedeutung und die Anwendung von Wirtschaftsinformatik in der modernen Wirtschaft mit "Warum Wirtschaftsinformatik?". Dieses Buch erklärt die grundlegenden Konzepte und Methoden der Wirtschaftsinformatik und zeigt, wie sie in der Praxis eingesetzt werden, um Unternehmen zu unterstützen und ihren Erfolg zu steigern. Sie werden erfahren, wie Wirtschaftsinformatik die Geschäftsprozesse verbessert, die Entscheidungsfindung unterstützt und die Effizienz erhöht. Lernen Sie, warum Wirtschaftsinformatik eine unerlässliche Disziplin für die Karriere im Business-Bereich ist mit "Warum Wirtschaftsinformatik?".
+                </p>
+                <a href="#" class="btn btn-primary nachschlagen">Nachschlagen</a>
+              </div>
+          </div>
+      </div>
+  </div>
+
+  <div class="row">
+      <div class="col-lg-12">
+          <div class="card horiz-card d-flex flex-row" style="width: 100%">
+              <div class="img-box">
+                <img src="https://i.imgur.com/sRxZV5m.png" class="card-img-left" alt="Card Image" style="height: 100%">
+              </div>
+              <div class="card-body" style="width: 70%;">
+                <h5 class="card-title">The Sigma Male</h5>
+                <p style="font-size: 12px;">Andreas Tat</p>
+                <i>Lebensqualität, Selbstbewusstsein, Erfolg, Unternehmertum, Innovation</i><br>
+                <p class="card-text">
+                  <br>
+                    Begleiten Sie den jungen Mann Tandrew Ate auf seiner Reise, wie er erkennt, dass er ein Sigma Male ist und lernt, wie er seine Stärken nutzen kann, um mehr Erfolg im Leben zu haben in "The Sigma Male". Dieses Buch erzählt die Geschichte von Tandrew und seiner Entwicklung von einem unzufriedenen und unerfüllten Mann zu einem selbstbewussten und erfolgreichen Individuum, das seine Unabhängigkeit und Selbstbestimmung lebt. Lernen Sie von Tandrews Erfahrungen und Entdecken Sie die Möglichkeiten die Sigma Male Denkweise bietet, mit "The Sigma Male"                </p>
+                <a href="#" class="btn btn-primary nachschlagen">Nachschlagen</a>
+              </div>
+          </div>
+      </div>
+  </div>
+
+
+
+  <!-- Kleinere Karten Produkte in Reihen und Zellen -->
+  <div class="row">
     <div class="col-lg-4">
         <a href="{{url_for('produkt')}}">
-            <div class="card col" style="float:left; margin:10px; border:none;">
-                <img src="https://images.pexels.com/photos/126407/pexels-photo-126407.jpeg"
-                         class="card-image-top" alt="Kein Bild">
+            <div class="card vert-card col">
+                <div class="card-image-top">
+                  <img src="https://i.imgur.com/hSOs3Ni.png" class="card-image-top-img" alt="Kein Bild">
+                </div>
                 <div class="card-body" style="overflow-y:scroll">
-                    <h5 class="card-title">Katze</h5>
-                    <i class="card-text">süß</i>
+                    <h5 class="card-title">How to Become an Alpha Male</h5>
+                    <i class="card-text">John Alexander</i>
                     <p></p>
-                    <p class="card-text"><b>Merkmale:</b> Niedlich und isst gern Fisch</p>
+                    <p class="card-text">Attract Women and Become Successful at Seduction</p>
                 </div>
             </div>
         </a>
     </div>
-    {% endfor %}
+    <div class="col-lg-4">
+        <a href="{{url_for('produkt')}}">
+            <div class="card vert-card col">
+                <div class="card-image-top">
+                  <img src="https://i.imgur.com/dJlwr33.png" class="card-image-top-img" alt="Kein Bild">
+                </div>
+                <div class="card-body" style="overflow-y:scroll">
+                    <h5 class="card-title">Das ist Alpha!</h5>
+                    <i class="card-text">Felix Blume</i>
+                    <p></p>
+                    <p class="card-text">Die 10 Boss-Gebote</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-4">
+        <a href="{{url_for('produkt')}}">
+            <div class="card vert-card col">
+                <div class="card-image-top">
+                  <img src="https://i.imgur.com/E3hN8ac.png" class="card-image-top-img" alt="Kein Bild">
+                </div>
+                <div class="card-body" style="overflow-y:scroll">
+                    <h5 class="card-title">Mehr Erfolg als schöner und attraktiver Mann</h5>
+                    <i class="card-text">Alexander Arlandt</i>
+                    <p></p>
+                    <p class="card-text">Die Waffen des Mannes</p>
+                </div>
+            </div>
+        </a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-4">
+        <a href="{{url_for('produkt')}}">
+            <div class="card vert-card col">
+                <div class="card-image-top">
+                  <img src="https://i.imgur.com/qE4chHK.png" class="card-image-top-img" alt="Kein Bild">
+                </div>
+                <div class="card-body" style="overflow-y:scroll">
+                    <h5 class="card-title">Wirtschaftsinformatik für dummies</h5>
+                    <i class="card-text">Stephan Thesmann, Werner Burkard</i>
+                    <p></p>
+                    <p class="card-text">Informationssysteme verstehen und managen, Organisationsstrukturen und Abläufe durchschauen, IT-Lösungen konzipieren und implementieren</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-4">
+        <a href="{{url_for('produkt')}}">
+            <div class="card vert-card col">
+                <div class="card-image-top">
+                  <img src="https://i.imgur.com/7YzmKdN.png" class="card-image-top-img" alt="Kein Bild">
+                </div>
+                <div class="card-body" style="overflow-y:scroll">
+                    <h5 class="card-title">Wirtschaftsinformatik in Wissenschaft und Praxis</h5>
+                    <i class="card-text">Walter Brenner, Thomas Hess</i>
+                    <p></p>
+                    <p class="card-text">Festschrift für Hubert Österle</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-4">
+        <a href="{{url_for('produkt')}}">
+            <div class="card vert-card col">
+                <div class="card-image-top">
+                  <img src="https://i.imgur.com/Ae2kQCs.png" class="card-image-top-img" alt="Kein Bild">
+                </div>
+                <div class="card-body" style="overflow-y:scroll">
+                    <h5 class="card-title">Wirtschaftsinformatik</h5>
+                    <i class="card-text">Wolfgang Lassmann</i>
+                    <p></p>
+                    <p class="card-text">Nachschlagewerk für Studium und Praxis</p>
+                </div>
+            </div>
+        </a>
+    </div>
   </div>
 
   {% endblock %}
-

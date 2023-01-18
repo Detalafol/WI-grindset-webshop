@@ -2,10 +2,18 @@
 
 {% block app_content %}
   <style>
-    .card:hover{
+    a, a:hover, a:focus, a:active {
+        text-decoration: none;
+        color: inherit;
+    }
+    .card-img-left{
+        height: 100%;
+        width: auto;
+        object-fit: cover;
+    }
+    .vert-card:hover{
         transform: scale(1.05);
         box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
-        height: auto;
         z-index: 1;
         position:relative;
     }
@@ -16,31 +24,167 @@
         height: 5em;
         width: 100%;
     }
+
+    .row{
+        height: 30rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    [class*="col-"] {
+        height: 100%;
+    }
     .card {
         background-color: dimgray;
         color: white;
         padding: 0;
-        padding-bottom: 33%;
+        float:left;
+        margin:10px;
+        border:none;
+        height: 100%;
+    }
+    .vert-card{
+        margin-bottom: 1rem;
     }
     .card-image-top{
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        width: 100%;
+        /*border-top-left-radius: 5px;
+        border-top-right-radius: 5px;*/
+        height: 60%;
         object-fit: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
-    a, a:hover, a:focus, a:active {
-        text-decoration: none;
-        color: inherit;
+    .card-image-top-img{
+        box-shadow: inset 5px 0px 5px #222, -5px 0px 5px #222;
+        height: 100%
+    }
+    .fa-shopping-cart{
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        height: 56px;
+        width: 88px;
+        background-color: orange;
+        border-radius: 5px;
+        font-size: 30px;
+    }
+    .horiz-card{
+        height:70vh;
     }
   </style>
 <body>
-  <h1>Katze</h1>
 
-  <!-- Produkte in Reihen und Zellen -->
-  <img src="https://images.pexels.com/photos/126407/pexels-photo-126407.jpeg" alt="Kein Bild" style="width: 100%">
-  <i>süß</i>
-  <p></p>
-  <p> Niedlich und isst gern Fisch</p>
+  <div class="card horiz-card d-flex flex-row" style="width: 100%">
+    <img src="https://i.imgur.com/1dyulDD.jpeg" class="card-img-left" alt="Card Image" style="height: 100%">
+    <div class="card-body" style="width: 70%;">
+      <h5 class="card-title">Sigma Male Theory</h5>
+      <p style="font-size: 12px;">Thomas Drew</p>
+      <i>Sigma Denkweise, Selbstoptimierung, Erfolgsstrategien, Zielerreichung, Problemlösung</i><br>
+      <p class="card-text">
+        <br>
+          Entdecken Sie die Welt des Sigma Male in "Sigma Male Theory". Dieses Buch untersucht die Charakteristika und Verhaltensweisen von Männern, die sich nicht in die traditionellen Rollen von Alpha- und Beta-Männern einordnen. Es erklärt, wie Sigma-Männer ihre Unabhängigkeit und Selbstbestimmung leben und trotzdem erfolgreich in ihrem Beruf und ihren Beziehungen sind. Lernen Sie, wie Sie Ihre Stärken als Sigma Male nutzen und sich von gängigen gesellschaftlichen Erwartungen befreien können, mit "Sigma Male Theory".
+      </p>
+      <button class="fa fa-shopping-cart"></button>
+    </div>
+  </div>
+
+  <h5> Ähnliche Bücher: </h5>
+   <!-- Kleinere Karten Produkte in Reihen und Zellen -->
+  <div class="row">
+    <div class="col-lg-4">
+        <a href="{{url_for('produkt')}}">
+            <div class="card vert-card col">
+                <div class="card-image-top">
+                  <img src="https://i.imgur.com/hSOs3Ni.png" class="card-image-top-img" alt="Kein Bild">
+                </div>
+                <div class="card-body" style="overflow-y:scroll">
+                    <h5 class="card-title">How to Become an Alpha Male</h5>
+                    <i class="card-text">John Alexander</i>
+                    <p></p>
+                    <p class="card-text">Attract Women and Become Successful at Seduction</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-4">
+        <a href="{{url_for('produkt')}}">
+            <div class="card vert-card col">
+                <div class="card-image-top">
+                  <img src="https://i.imgur.com/dJlwr33.png" class="card-image-top-img" alt="Kein Bild">
+                </div>
+                <div class="card-body" style="overflow-y:scroll">
+                    <h5 class="card-title">Das ist Alpha!</h5>
+                    <i class="card-text">Felix Blume</i>
+                    <p></p>
+                    <p class="card-text">Die 10 Boss-Gebote</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-4">
+        <a href="{{url_for('produkt')}}">
+            <div class="card vert-card col">
+                <div class="card-image-top">
+                  <img src="https://i.imgur.com/E3hN8ac.png" class="card-image-top-img" alt="Kein Bild">
+                </div>
+                <div class="card-body" style="overflow-y:scroll">
+                    <h5 class="card-title">Mehr Erfolg als schöner und attraktiver Mann</h5>
+                    <i class="card-text">Alexander Arlandt</i>
+                    <p></p>
+                    <p class="card-text">Die Waffen des Mannes</p>
+                </div>
+            </div>
+        </a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-lg-4">
+        <a href="{{url_for('produkt')}}">
+            <div class="card vert-card col">
+                <div class="card-image-top">
+                  <img src="https://i.imgur.com/qE4chHK.png" class="card-image-top-img" alt="Kein Bild">
+                </div>
+                <div class="card-body" style="overflow-y:scroll">
+                    <h5 class="card-title">Wirtschaftsinformatik für dummies</h5>
+                    <i class="card-text">Stephan Thesmann, Werner Burkard</i>
+                    <p></p>
+                    <p class="card-text">Informationssysteme verstehen und managen, Organisationsstrukturen und Abläufe durchschauen, IT-Lösungen konzipieren und implementieren</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-4">
+        <a href="{{url_for('produkt')}}">
+            <div class="card vert-card col">
+                <div class="card-image-top">
+                  <img src="https://i.imgur.com/7YzmKdN.png" class="card-image-top-img" alt="Kein Bild">
+                </div>
+                <div class="card-body" style="overflow-y:scroll">
+                    <h5 class="card-title">Wirtschaftsinformatik in Wissenschaft und Praxis</h5>
+                    <i class="card-text">Walter Brenner, Thomas Hess</i>
+                    <p></p>
+                    <p class="card-text">Festschrift für Hubert Österle</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-4">
+        <a href="{{url_for('produkt')}}">
+            <div class="card vert-card col">
+                <div class="card-image-top">
+                  <img src="https://i.imgur.com/Ae2kQCs.png" class="card-image-top-img" alt="Kein Bild">
+                </div>
+                <div class="card-body" style="overflow-y:scroll">
+                    <h5 class="card-title">Wirtschaftsinformatik</h5>
+                    <i class="card-text">Wolfgang Lassmann</i>
+                    <p></p>
+                    <p class="card-text">Nachschlagewerk für Studium und Praxis</p>
+                </div>
+            </div>
+        </a>
+    </div>
+  </div>
 
   {% endblock %}
 
