@@ -60,7 +60,7 @@
         border-radius: 5px
     }
     .nachschlagen{
-        position: absolute;
+        /*position: absolute; */
         bottom: 5px;
         right: 5px;
     }
@@ -70,9 +70,11 @@
     }
   </style>
 <body>
-  <h1>Willkommen in unserem Webshop!</h1>
+  <div class="text">
+    <h1>Willkommen in unserem Webshop!</h1>
 
-  <p>Hier unsere Produkte:</p>
+    <p>Hier unsere Produkte:</p>
+  </div>
 
   <div class="row">
       <div class="col-lg-12 horiz-card">
@@ -82,15 +84,15 @@
               </div>
               <div class="card-body" style="width: 70%;">
                 <h5 class="card-title">The Sigma Mindest</h5>
-                <p style="font-size: 12px;">Andy Gate</p>
+                <p style="font-size: 12px;">Tandrew Ate</p>
                 <i>
                   Entscheidungsfindung, Persönlichkeitsentwicklung, Menschenführung, Produktivität, Denkweise-Optimierung
                 </i>
                 <p class="card-text">
                   <br>
-                    Erfahren Sie in "The Sigma Mindset" wie Sie Ihr Potenzial voll ausschöpfen und effektiver als je zuvor arbeiten können. Dieses Buch zeigt Ihnen, wie Sie Ihre Fähigkeiten und Ihre Denkweise optimieren, um erfolgreicher in Beruf und Privatleben zu sein. Lernen Sie, wie Sie Ziele erreichen, Probleme lösen und Ihre Träume verwirklichen können, indem Sie die Methoden der Sigma-Denkweise anwenden. Beginnen Sie jetzt Ihre Reise zum Erfolg mit "The Sigma Mindset".
+                    Erfahren Sie in "The Sigma Mindest" wie Sie Ihr Potenzial voll ausschöpfen und effektiver als je zuvor arbeiten können. Dieses Buch zeigt Ihnen, wie Sie Ihre Fähigkeiten und Ihre Denkweise optimieren, um erfolgreicher in Beruf und Privatleben zu sein. Lernen Sie, wie Sie Ziele erreichen, Probleme lösen und Ihre Träume verwirklichen können, indem Sie die Methoden der Sigma-Denkweise anwenden. Beginnen Sie jetzt Ihre Reise zum Erfolg mit "The Sigma Mindset".
                 </p>
-                <a href="#" class="btn btn-primary nachschlagen">Nachschlagen</a>
+                <a href="{{url_for('produkt', produktname='The Sigma Mindest')}}" class="btn btn-primary nachschlagen">Nachschlagen</a>
               </div>
           </div>
       </div>
@@ -104,13 +106,13 @@
               </div>
               <div class="card-body" style="width: 70%;">
                 <h5 class="card-title">Sigma Male Theory</h5>
-                <p style="font-size: 12px;">Thomas Drew</p>
+                <p style="font-size: 12px;">Tandrew Ate</p>
                 <i>Sigma Denkweise, Selbstoptimierung, Erfolgsstrategien, Zielerreichung, Problemlösung</i><br>
                 <p class="card-text">
                   <br>
                     Entdecken Sie die Welt des Sigma Male in "Sigma Male Theory". Dieses Buch untersucht die Charakteristika und Verhaltensweisen von Männern, die sich nicht in die traditionellen Rollen von Alpha- und Beta-Männern einordnen. Es erklärt, wie Sigma-Männer ihre Unabhängigkeit und Selbstbestimmung leben und trotzdem erfolgreich in ihrem Beruf und ihren Beziehungen sind. Lernen Sie, wie Sie Ihre Stärken als Sigma Male nutzen und sich von gängigen gesellschaftlichen Erwartungen befreien können, mit "Sigma Male Theory".
                 </p>
-                <a href="#" class="btn btn-primary nachschlagen">Nachschlagen</a>
+                <a href="{{url_for('produkt', produktname='Sigma Male Theory')}}" class="btn btn-primary nachschlagen">Nachschlagen</a>
               </div>
           </div>
       </div>
@@ -130,7 +132,7 @@
                   <br>
                     Verstehen Sie die Bedeutung und die Anwendung von Wirtschaftsinformatik in der modernen Wirtschaft mit "Warum Wirtschaftsinformatik?". Dieses Buch erklärt die grundlegenden Konzepte und Methoden der Wirtschaftsinformatik und zeigt, wie sie in der Praxis eingesetzt werden, um Unternehmen zu unterstützen und ihren Erfolg zu steigern. Sie werden erfahren, wie Wirtschaftsinformatik die Geschäftsprozesse verbessert, die Entscheidungsfindung unterstützt und die Effizienz erhöht. Lernen Sie, warum Wirtschaftsinformatik eine unerlässliche Disziplin für die Karriere im Business-Bereich ist mit "Warum Wirtschaftsinformatik?".
                 </p>
-                <a href="#" class="btn btn-primary nachschlagen">Nachschlagen</a>
+                <a href="{{url_for('produkt', produktname='Warum Wirtschaftsinformatik')}}" class="btn btn-primary nachschlagen">Nachschlagen</a>
               </div>
           </div>
       </div>
@@ -144,12 +146,12 @@
               </div>
               <div class="card-body" style="width: 70%;">
                 <h5 class="card-title">The Sigma Male</h5>
-                <p style="font-size: 12px;">Andreas Tat</p>
+                <p style="font-size: 12px;">Tandrew 8</p>
                 <i>Lebensqualität, Selbstbewusstsein, Erfolg, Unternehmertum, Innovation</i><br>
                 <p class="card-text">
                   <br>
                     Begleiten Sie den jungen Mann Tandrew Ate auf seiner Reise, wie er erkennt, dass er ein Sigma Male ist und lernt, wie er seine Stärken nutzen kann, um mehr Erfolg im Leben zu haben in "The Sigma Male". Dieses Buch erzählt die Geschichte von Tandrew und seiner Entwicklung von einem unzufriedenen und unerfüllten Mann zu einem selbstbewussten und erfolgreichen Individuum, das seine Unabhängigkeit und Selbstbestimmung lebt. Lernen Sie von Tandrews Erfahrungen und Entdecken Sie die Möglichkeiten die Sigma Male Denkweise bietet, mit "The Sigma Male"                </p>
-                <a href="#" class="btn btn-primary nachschlagen">Nachschlagen</a>
+                <a href="{{url_for('produkt', produktname='The Sigma Male')}}" class="btn btn-primary nachschlagen">Nachschlagen</a>
               </div>
           </div>
       </div>
@@ -160,7 +162,7 @@
   <!-- Kleinere Karten Produkte in Reihen und Zellen -->
   <div class="row">
     <div class="col-lg-4">
-        <a href="{{url_for('produkt')}}">
+        <a href="{{url_for('produkt', produktname='How to Become an Alpha Male')}}">
             <div class="card vert-card col">
                 <div class="card-image-top">
                   <img src="https://i.imgur.com/hSOs3Ni.png" class="card-image-top-img" alt="Kein Bild">
@@ -175,7 +177,7 @@
         </a>
     </div>
     <div class="col-lg-4">
-        <a href="{{url_for('produkt')}}">
+        <a href="{{url_for('produkt', produktname='Das ist Alpha')}}">
             <div class="card vert-card col">
                 <div class="card-image-top">
                   <img src="https://i.imgur.com/dJlwr33.png" class="card-image-top-img" alt="Kein Bild">
@@ -190,7 +192,7 @@
         </a>
     </div>
     <div class="col-lg-4">
-        <a href="{{url_for('produkt')}}">
+        <a href="{{url_for('produkt', produktname='Mehr Erfolg als schöner und attraktiver Mann')}}">
             <div class="card vert-card col">
                 <div class="card-image-top">
                   <img src="https://i.imgur.com/E3hN8ac.png" class="card-image-top-img" alt="Kein Bild">
@@ -208,7 +210,7 @@
 
   <div class="row">
     <div class="col-lg-4">
-        <a href="{{url_for('produkt')}}">
+        <a href="{{url_for('produkt', produktname='Wirtschaftsinformatik für dummies')}}">
             <div class="card vert-card col">
                 <div class="card-image-top">
                   <img src="https://i.imgur.com/qE4chHK.png" class="card-image-top-img" alt="Kein Bild">
@@ -223,7 +225,7 @@
         </a>
     </div>
     <div class="col-lg-4">
-        <a href="{{url_for('produkt')}}">
+        <a href="{{url_for('produkt', produktname='Wirtschaftsinformatik in Wissenschaft und Praxis')}}">
             <div class="card vert-card col">
                 <div class="card-image-top">
                   <img src="https://i.imgur.com/7YzmKdN.png" class="card-image-top-img" alt="Kein Bild">
@@ -238,7 +240,7 @@
         </a>
     </div>
     <div class="col-lg-4">
-        <a href="{{url_for('produkt')}}">
+        <a href="{{url_for('produkt', produktname='Wirtschaftsinformatik')}}">
             <div class="card vert-card col">
                 <div class="card-image-top">
                   <img src="https://i.imgur.com/Ae2kQCs.png" class="card-image-top-img" alt="Kein Bild">

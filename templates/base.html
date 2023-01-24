@@ -19,8 +19,12 @@
 
   <style>
     body {
-      background-color: #444444;
+      /*background-color: #444444;*/
       color: white;
+    }
+
+    .bgimg{
+        filter: blur(5px);
     }
 
     .navbar-toggler{
@@ -40,12 +44,32 @@
         padding: 1em 0;
     }
 
+    #bg-image {
+      background-image: url('https://i.imgur.com/f3MunQI.jpg');
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      filter: blur(5px); /* Wert kann angepasst werden */
+      width: 100%; /* um sicherzustellen das es den gesamten Hintergrund einnimmt */
+      height: 100%; /* um sicherzustellen das es den gesamten Hintergrund einnimmt */
+      position: fixed; /* um es über dem rest der Seite zu positionieren*/
+      top: 0;
+      left: 0;
+      z-index: -99;
+  }
+
+  .text{
+      background-color: #444444;
+      border-radius: 10px;
+      margin: 20px;
+      padding:5px
+  }
 
   </style>
 
 </head>
 
-<body>
+<body><div id="bg-image"></div> <!-- für Hintergrundbild -->
   {% block navbar %}
   <nav class="navbar navbar-dark navbar-expand-sm bg-dark">
     <div class="container">

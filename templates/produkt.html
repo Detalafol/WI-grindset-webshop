@@ -72,27 +72,55 @@
         height:70vh;
     }
   </style>
+
+<head>
+  <meta charset="utf-8">
+  <title>{{titel}}</title>
+</head>
+
+
+<template id="alternative"> <!-- Template für alternativen Vorschlag, weil gleicher Vorschlag keinen Sinn macht -->
+  <div class="col-lg-4">
+      <a href="{{url_for('produkt', produktname='Warum Wirtschaftsinformatik')}}">
+          <div class="card vert-card col">
+              <div class="card-image-top">
+                <img src="https://i.imgur.com/4hNf7jO.jpeg" class="card-image-top-img" alt="Kein Bild">
+              </div>
+              <div class="card-body" style="overflow-y:scroll">
+                  <h5 class="card-title">Warum Wirtschaftsinformatik?</h5>
+                  <i class="card-text">Mandrew Mate</i>
+                  <p></p>
+                  <p class="card-text">Verstehen Sie die Bedeutung und die Anwendung von Wirtschaftsinformatik </p>
+              </div>
+          </div>
+      </a>
+  </div>
+</template>
+
+
 <body>
 
   <div class="card horiz-card d-flex flex-row" style="width: 100%">
-    <img src="https://i.imgur.com/1dyulDD.jpeg" class="card-img-left" alt="Card Image" style="height: 100%">
+    <img src="{{bildlink}}" class="card-img-left" alt="Card Image" style="height: 100%">
     <div class="card-body" style="width: 70%;">
-      <h5 class="card-title">Sigma Male Theory</h5>
-      <p style="font-size: 12px;">Thomas Drew</p>
-      <i>Sigma Denkweise, Selbstoptimierung, Erfolgsstrategien, Zielerreichung, Problemlösung</i><br>
+      <h5 class="card-title">{{titel}}</h5>
+      <p style="font-size: 12px;">{{autor}}</p>
+      <i>{{stichworte}}</i><br>
       <p class="card-text">
         <br>
-          Entdecken Sie die Welt des Sigma Male in "Sigma Male Theory". Dieses Buch untersucht die Charakteristika und Verhaltensweisen von Männern, die sich nicht in die traditionellen Rollen von Alpha- und Beta-Männern einordnen. Es erklärt, wie Sigma-Männer ihre Unabhängigkeit und Selbstbestimmung leben und trotzdem erfolgreich in ihrem Beruf und ihren Beziehungen sind. Lernen Sie, wie Sie Ihre Stärken als Sigma Male nutzen und sich von gängigen gesellschaftlichen Erwartungen befreien können, mit "Sigma Male Theory".
+        {{beschreibung}}
       </p>
       <button class="fa fa-shopping-cart"></button>
     </div>
   </div>
 
-  <h5> Ähnliche Bücher: </h5>
+  <br><br>
+  <div class="text"><h5> Ähnliche Bücher: </h5></div>
    <!-- Kleinere Karten Produkte in Reihen und Zellen -->
   <div class="row">
+    {% if not titel == "How to Become an Alpha Male - Attract Women and Become Successful at Seduction\n" %}
     <div class="col-lg-4">
-        <a href="{{url_for('produkt')}}">
+        <a href="{{url_for('produkt', produktname='How to Become an Alpha Male')}}">
             <div class="card vert-card col">
                 <div class="card-image-top">
                   <img src="https://i.imgur.com/hSOs3Ni.png" class="card-image-top-img" alt="Kein Bild">
@@ -106,8 +134,26 @@
             </div>
         </a>
     </div>
+    {% elif 1 == 1 %}
     <div class="col-lg-4">
-        <a href="{{url_for('produkt')}}">
+      <a href="{{url_for('produkt', produktname='Warum Wirtschaftsinformatik')}}">
+          <div class="card vert-card col">
+              <div class="card-image-top">
+                <img src="https://i.imgur.com/4hNf7jO.jpeg" class="card-image-top-img" alt="Kein Bild">
+              </div>
+              <div class="card-body" style="overflow-y:scroll">
+                  <h5 class="card-title">Warum Wirtschaftsinformatik?</h5>
+                  <i class="card-text">Mandrew Mate</i>
+                  <p></p>
+                  <p class="card-text">Verstehen Sie die Bedeutung und die Anwendung von Wirtschaftsinformatik </p>
+              </div>
+          </div>
+      </a>
+    </div>
+    {% endif %}
+    {% if not titel == "Das ist Alpha! - Die 10 Boss-Gebote\n" %}
+    <div class="col-lg-4">
+        <a href="{{url_for('produkt', produktname='Das ist Alpha')}}">
             <div class="card vert-card col">
                 <div class="card-image-top">
                   <img src="https://i.imgur.com/dJlwr33.png" class="card-image-top-img" alt="Kein Bild">
@@ -121,8 +167,26 @@
             </div>
         </a>
     </div>
+    {% elif 1 == 1 %}
     <div class="col-lg-4">
-        <a href="{{url_for('produkt')}}">
+      <a href="{{url_for('produkt', produktname='Warum Wirtschaftsinformatik')}}">
+          <div class="card vert-card col">
+              <div class="card-image-top">
+                <img src="https://i.imgur.com/4hNf7jO.jpeg" class="card-image-top-img" alt="Kein Bild">
+              </div>
+              <div class="card-body" style="overflow-y:scroll">
+                  <h5 class="card-title">Warum Wirtschaftsinformatik?</h5>
+                  <i class="card-text">Mandrew Mate</i>
+                  <p></p>
+                  <p class="card-text">Verstehen Sie die Bedeutung und die Anwendung von Wirtschaftsinformatik </p>
+              </div>
+          </div>
+      </a>
+    </div>
+    {% endif %}
+    {% if not titel == "Mehr Erfolg als schöner und attraktiver Mann\n" %}
+    <div class="col-lg-4">
+        <a href="{{url_for('produkt', produktname='Mehr Erfolg als schöner und attraktiver Mann')}}">
             <div class="card vert-card col">
                 <div class="card-image-top">
                   <img src="https://i.imgur.com/E3hN8ac.png" class="card-image-top-img" alt="Kein Bild">
@@ -136,11 +200,29 @@
             </div>
         </a>
     </div>
+    {% elif 1 == 1 %}
+    <div class="col-lg-4">
+      <a href="{{url_for('produkt', produktname='Warum Wirtschaftsinformatik')}}">
+          <div class="card vert-card col">
+              <div class="card-image-top">
+                <img src="https://i.imgur.com/4hNf7jO.jpeg" class="card-image-top-img" alt="Kein Bild">
+              </div>
+              <div class="card-body" style="overflow-y:scroll">
+                  <h5 class="card-title">Warum Wirtschaftsinformatik?</h5>
+                  <i class="card-text">Mandrew Mate</i>
+                  <p></p>
+                  <p class="card-text">Verstehen Sie die Bedeutung und die Anwendung von Wirtschaftsinformatik </p>
+              </div>
+          </div>
+      </a>
+    </div>
+    {% endif %}
   </div>
 
   <div class="row">
+    {% if not titel == "Wirtschaftsinformatik für dummies\n" %}
     <div class="col-lg-4">
-        <a href="{{url_for('produkt')}}">
+        <a href="{{url_for('produkt', produktname='Wirtschaftsinformatik für dummies')}}">
             <div class="card vert-card col">
                 <div class="card-image-top">
                   <img src="https://i.imgur.com/qE4chHK.png" class="card-image-top-img" alt="Kein Bild">
@@ -154,8 +236,26 @@
             </div>
         </a>
     </div>
+    {% elif 1 == 1 %}
     <div class="col-lg-4">
-        <a href="{{url_for('produkt')}}">
+      <a href="{{url_for('produkt', produktname='Warum Wirtschaftsinformatik')}}">
+          <div class="card vert-card col">
+              <div class="card-image-top">
+                <img src="https://i.imgur.com/4hNf7jO.jpeg" class="card-image-top-img" alt="Kein Bild">
+              </div>
+              <div class="card-body" style="overflow-y:scroll">
+                  <h5 class="card-title">Warum Wirtschaftsinformatik?</h5>
+                  <i class="card-text">Mandrew Mate</i>
+                  <p></p>
+                  <p class="card-text">Verstehen Sie die Bedeutung und die Anwendung von Wirtschaftsinformatik </p>
+              </div>
+          </div>
+      </a>
+    </div>
+    {% endif %}
+    {% if not titel == "Wirtschaftsinformatik in Wissenschaft und Praxis\n" %}
+    <div class="col-lg-4">
+        <a href="{{url_for('produkt', produktname='Wirtschaftsinformatik in Wissenschaft und Praxis')}}">
             <div class="card vert-card col">
                 <div class="card-image-top">
                   <img src="https://i.imgur.com/7YzmKdN.png" class="card-image-top-img" alt="Kein Bild">
@@ -169,8 +269,42 @@
             </div>
         </a>
     </div>
+    {% elif 1 == 1 %}
     <div class="col-lg-4">
-        <a href="{{url_for('produkt')}}">
+      <a href="{{url_for('produkt', produktname='Warum Wirtschaftsinformatik')}}">
+          <div class="card vert-card col">
+              <div class="card-image-top">
+                <img src="https://i.imgur.com/4hNf7jO.jpeg" class="card-image-top-img" alt="Kein Bild">
+              </div>
+              <div class="card-body" style="overflow-y:scroll">
+                  <h5 class="card-title">Warum Wirtschaftsinformatik?</h5>
+                  <i class="card-text">Mandrew Mate</i>
+                  <p></p>
+                  <p class="card-text">Verstehen Sie die Bedeutung und die Anwendung von Wirtschaftsinformatik </p>
+              </div>
+          </div>
+      </a>
+    </div>
+    {% elif 1 == 1 %}
+    <div class="col-lg-4">
+      <a href="{{url_for('produkt', produktname='Warum Wirtschaftsinformatik')}}">
+          <div class="card vert-card col">
+              <div class="card-image-top">
+                <img src="https://i.imgur.com/4hNf7jO.jpeg" class="card-image-top-img" alt="Kein Bild">
+              </div>
+              <div class="card-body" style="overflow-y:scroll">
+                  <h5 class="card-title">Warum Wirtschaftsinformatik?</h5>
+                  <i class="card-text">Mandrew Mate</i>
+                  <p></p>
+                  <p class="card-text">Verstehen Sie die Bedeutung und die Anwendung von Wirtschaftsinformatik </p>
+              </div>
+          </div>
+      </a>
+    </div>
+    {% endif %}
+    {% if not titel == "Wirtschaftsinformatik\n" %}
+    <div class="col-lg-4">
+        <a href="{{url_for('produkt', produktname='Wirtschaftsinformatik')}}">
             <div class="card vert-card col">
                 <div class="card-image-top">
                   <img src="https://i.imgur.com/Ae2kQCs.png" class="card-image-top-img" alt="Kein Bild">
@@ -184,6 +318,23 @@
             </div>
         </a>
     </div>
+    {% elif 1 == 1 %}
+    <div class="col-lg-4">
+      <a href="{{url_for('produkt', produktname='Warum Wirtschaftsinformatik')}}">
+          <div class="card vert-card col">
+              <div class="card-image-top">
+                <img src="https://i.imgur.com/4hNf7jO.jpeg" class="card-image-top-img" alt="Kein Bild">
+              </div>
+              <div class="card-body" style="overflow-y:scroll">
+                  <h5 class="card-title">Warum Wirtschaftsinformatik?</h5>
+                  <i class="card-text">Mandrew Mate</i>
+                  <p></p>
+                  <p class="card-text">Verstehen Sie die Bedeutung und die Anwendung von Wirtschaftsinformatik </p>
+              </div>
+          </div>
+      </a>
+    </div>
+    {% endif %}
   </div>
 
   {% endblock %}
