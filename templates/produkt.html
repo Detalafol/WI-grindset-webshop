@@ -58,16 +58,27 @@
         box-shadow: inset 5px 0px 5px #222, -5px 0px 5px #222;
         height: 100%
     }
-    .fa-shopping-cart{
-        position: absolute;
-        bottom: 5px;
-        right: 5px;
-        height: 56px;
-        width: 88px;
-        background-color: orange;
-        border-radius: 5px;
-        font-size: 30px;
-    }
+      /*default button style*/
+      .fa-shopping-cart {
+        background-color: #4CAF50; /*Green*/
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+      }
+
+      /*change button style on hover*/
+      .fa-shopping-cart:hover {
+        background-color: #3e8e41; /*Darker green*/
+      }
+
+      /*change button style on click*/
+      .fa-shopping-cart:active {
+        background-color: #3e8e41; /*Darker green*/
+        transform: translateY(4px);
+      }
     .horiz-card{
         height:70vh;
     }
@@ -84,7 +95,27 @@
         <br>
           Entdecken Sie die Welt des Sigma Male in "Sigma Male Theory". Dieses Buch untersucht die Charakteristika und Verhaltensweisen von Männern, die sich nicht in die traditionellen Rollen von Alpha- und Beta-Männern einordnen. Es erklärt, wie Sigma-Männer ihre Unabhängigkeit und Selbstbestimmung leben und trotzdem erfolgreich in ihrem Beruf und ihren Beziehungen sind. Lernen Sie, wie Sie Ihre Stärken als Sigma Male nutzen und sich von gängigen gesellschaftlichen Erwartungen befreien können, mit "Sigma Male Theory".
       </p>
-      <button class="fa fa-shopping-cart"></button>
+        <form action="/warenkorb">
+            <button type="submit" value="+" class="fa fa-shopping-cart" onclick="addToCart()" > </button>
+        </form>
+
+        <script>
+          function addToCart() {
+            //get the current cart from local storage
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+            //create an object for the item to add to the cart
+            let item = {
+              name: 'Sigma Male Theory',
+              author: 'Thomas Drew',
+              price: 19.99
+            }
+            //add the item to the cart
+            cart.push(item);
+            //save the updated cart to local storage
+            localStorage.setItem('cart', JSON.stringify(cart));
+         }
+        </script>
+      <!--<button class="fa fa-shopping-cart"></button> -->
     </div>
   </div>
 

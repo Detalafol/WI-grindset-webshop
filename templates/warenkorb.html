@@ -2,12 +2,67 @@
 
 {% block app_content %}
   <style>
-
+    /* CSS styles for table */
+    .card {
+        background-color: dimgray;
+        color: white;
+        padding: 0;
+        float:left;
+        margin:10px;
+        border:none;
+        height: 100%;
+    }
   </style>
-<body>
-  <h1>Warenkorb</h1>
 
+  <h1>Warenkorb</h1>
   <p>Du hast folgende Artikel im Warenkorb:</p>
 
-  {% endblock %}
+  <div class="card-columns" id="cart-items">
 
+  </div>
+<div id="total"></div>
+<form action="/checkout" method="post">
+    <input type="submit" value="Zur Kasse" id="checkout-button">
+</form>
+
+  <script>
+     //get the cart from local storage
+    let cart = JSON.parse(localStorage.getItem('cart')) || [];
+    let total = 0;
+    //loop through the cart items and add them to the card-columns
+    for (let i = 0; i < cart.length; i++) {
+      let item = cart[i];
+      total += item.price*item.quantity;
+      let card = document.createElement('div');
+      card.classList.add('card');
+      card.innerHTML = `
+        <img src="https://i.imgur.com/1dyulDD.jpeg" class="card-img-top" alt="${item.name}">
+        <div class="card-body">
+          <h5 class="card-title">${item.name}</h5>
+          <p class="card-text">${item.author}</p>
+          <p class="card-text">Preis: ${item.price}€</p>
+          <div class="form-group">
+            <label for="quantity-${i}">Anzahl:</label>
+            <input type="number" class="form-control" id="quantity-${i}" value="${item.quantity}" onchange="updateQuantity(${i})">
+          </div>
+          <button class="btn btn-danger" onclick="removeItem(${i})">Entfernen</button>
+        </div>
+      `;
+      document.getElementById('cart-items').appendChild(card);
+    }
+    document.getElementById('total').innerHTML = `Gesamtsumme: ${total}€`;
+
+    function updateQuantity(index) {
+      let quantity = document.getElementById(`quantity-${index}`).value;
+      cart[index].quantity = quantity;
+      localStorage.setItem('cart', JSON.stringify(cart));
+      location.reload();
+    }
+
+    function removeItem(index) {
+      cart.splice(index, 1);
+      localStorage.setItem('cart', JSON.stringify(cart));
+      location.reload();
+    }
+  </script>
+{% endblock %}
