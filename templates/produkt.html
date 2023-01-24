@@ -108,21 +108,33 @@
   </div>
 </template>
 
-
 <body>
 
   <div class="card horiz-card d-flex flex-row" style="width: 100%">
-    <img src="{{bildlink}}" class="card-img-left" alt="Card Image" style="height: 100%">
+    <img src="{{bildlink}}" id="produktbild" class="card-img-left" alt="Card Image" style="height: 100%">
     <div class="card-body" style="width: 70%;">
-      <h5 class="card-title">{{titel}}</h5>
-      <p style="font-size: 12px;">{{autor}}</p>
+      <h5 class="card-title" id="titelfeld">{{titel}}</h5>
+      <p style="font-size: 12px;" id="autorfeld">{{autor}}</p>
       <i>{{stichworte}}</i><br>
       <p class="card-text">
         <br>
         {{beschreibung}}
       </p>
+
+<script>
+  const titelfeld = document.getElementById("titelfeld");
+  const titel = titelfeld.textContent;
+  const autorfeld = document.getElementById("autorfeld");
+  const autor = autorfeld.textContent;
+  const bild = document.getElementById("produktbild");
+  const bildlink = bild.src;
+  console.log(titel, autor, bildlink)
+</script>
+
         <form action="/warenkorb">
-            <button type="submit" value="+" class="fa fa-shopping-cart" onclick="addToCart({ name: 'Sigma Male Theory', author: 'Thomas Drew', price: 19.99, quantity: 1, id: 'book001', img: 'https://i.imgur.com/1dyulDD.jpeg'})" > </button>
+            <button type="submit" value="+" class="fa fa-shopping-cart" onclick="addToCart(
+                { name: titel, author: autor, price: 19.99, quantity: 1, id: 'book001',
+                img: bildlink})" > </button>
         </form>
 
         <script>
@@ -131,7 +143,7 @@
 
                 //loop through the cart to check if the item already exists
                 for (let i = 0; i < cart.length; i++) {
-                    if (cart[i].id === item.id) {
+                    if (cart[i].name === item.name) {
                         cart[i].quantity++;
                         localStorage.setItem('cart', JSON.stringify(cart));
                         return;

@@ -28,7 +28,7 @@ def produkt(produktname):
         keyword = line[:line.index(":")]
         value = line[line.index(":")+1:]
         data[keyword] = value
-        print(f"{keyword=} {value=}")
+        # print(f"{keyword=} {value=}")
 
 
     return render_template("produkt.html", title=produktname, titel=data['titel'], autor=data['autor'],

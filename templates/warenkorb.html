@@ -12,18 +12,41 @@
         border:none;
         height: 100%;
     }
+
+    .row{
+        height: 45rem;
+        display: flex;
+        flex-wrap: nowrap;
+        overflow-x: auto;
+    }
+
+    .card-img-top{
+        height:50%;
+        text-align :center;
+    }
+
+    .card-img-top-img{
+        height: 100%;
+    }
+
   </style>
 
-  <h1>Warenkorb</h1>
-  <p>Du hast folgende Artikel im Warenkorb:</p>
-
-  <div class="card-columns" id="cart-items">
+  <div class="text">
+    <h1>Warenkorb</h1>
+    <p>Du hast folgende Artikel im Warenkorb:</p>
+  </div>
+  <div class="row card-columns" id="cart-items">
 
   </div>
-<div id="total"></div>
-<form action="/checkout" method="post">
-    <input type="submit" value="Zur Kasse" id="checkout-button">
-</form>
+
+
+<div class="text">
+  <div id="total"></div>
+
+  <form action="/checkout" method="post">
+      <input type="submit" value="Zur Kasse" id="checkout-button">
+  </form>
+</div>
 
   <script>
      //get the cart from local storage
@@ -35,8 +58,11 @@
       total += item.price*item.quantity;
       let card = document.createElement('div');
       card.classList.add('card');
+      card.classList.add('col-4');
       card.innerHTML = `
-        <img src="${item.img}" class="card-img-top" alt="${item.name}">
+        <div class="card-img-top">
+          <img src="${item.img}" class="card-img-top-img" alt="${item.name}">
+        </div>
         <div class="card-body">
           <h5 class="card-title">${item.name}</h5>
           <p class="card-text">${item.author}</p>
@@ -50,7 +76,7 @@
       `;
       document.getElementById('cart-items').appendChild(card);
     }
-    document.getElementById('total').innerHTML = `Gesamtsumme: ${total}€`;
+    document.getElementById('total').innerHTML = `Gesamtsumme: ${total.toFixed(2)}€`; //2 Nachkommastellen
 
     function updateQuantity(index) {
       let quantity = document.getElementById(`quantity-${index}`).value;
