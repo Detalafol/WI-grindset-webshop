@@ -96,24 +96,27 @@
           Entdecken Sie die Welt des Sigma Male in "Sigma Male Theory". Dieses Buch untersucht die Charakteristika und Verhaltensweisen von Männern, die sich nicht in die traditionellen Rollen von Alpha- und Beta-Männern einordnen. Es erklärt, wie Sigma-Männer ihre Unabhängigkeit und Selbstbestimmung leben und trotzdem erfolgreich in ihrem Beruf und ihren Beziehungen sind. Lernen Sie, wie Sie Ihre Stärken als Sigma Male nutzen und sich von gängigen gesellschaftlichen Erwartungen befreien können, mit "Sigma Male Theory".
       </p>
         <form action="/warenkorb">
-            <button type="submit" value="+" class="fa fa-shopping-cart" onclick="addToCart()" > </button>
+            <button type="submit" value="+" class="fa fa-shopping-cart" onclick="addToCart({ name: 'Sigma Male Theory', author: 'Thomas Drew', price: 19.99, quantity: 1, id: 'book001', img: 'https://i.imgur.com/1dyulDD.jpeg'})" > </button>
         </form>
 
         <script>
-          function addToCart() {
-            //get the current cart from local storage
-            let cart = JSON.parse(localStorage.getItem('cart')) || [];
-            //create an object for the item to add to the cart
-            let item = {
-              name: 'Sigma Male Theory',
-              author: 'Thomas Drew',
-              price: 19.99
+            function addToCart(item) {
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                //loop through the cart to check if the item already exists
+                for (let i = 0; i < cart.length; i++) {
+                    if (cart[i].id === item.id) {
+                        cart[i].quantity++;
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        return;
+                    }
+                }
+                //if the item doesn't exist in the cart
+
+                item.quantity = 1;
+                cart.push(item);
+                localStorage.setItem('cart', JSON.stringify(cart));
             }
-            //add the item to the cart
-            cart.push(item);
-            //save the updated cart to local storage
-            localStorage.setItem('cart', JSON.stringify(cart));
-         }
         </script>
       <!--<button class="fa fa-shopping-cart"></button> -->
     </div>
