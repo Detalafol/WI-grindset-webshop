@@ -58,16 +58,27 @@
         box-shadow: inset 5px 0px 5px #222, -5px 0px 5px #222;
         height: 100%
     }
-    .fa-shopping-cart{
-        position: absolute;
-        bottom: 5px;
-        right: 5px;
-        height: 56px;
-        width: 88px;
-        background-color: orange;
-        border-radius: 5px;
-        font-size: 30px;
-    }
+      /*default button style*/
+      .fa-shopping-cart {
+        background-color: #4CAF50; /*Green*/
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        cursor: pointer;
+        width: 100%;
+        opacity: 0.9;
+      }
+
+      /*change button style on hover*/
+      .fa-shopping-cart:hover {
+        background-color: #3e8e41; /*Darker green*/
+      }
+
+      /*change button style on click*/
+      .fa-shopping-cart:active {
+        background-color: #3e8e41; /*Darker green*/
+        transform: translateY(4px);
+      }
     .horiz-card{
         height:70vh;
     }
@@ -110,7 +121,30 @@
         <br>
         {{beschreibung}}
       </p>
-      <button class="fa fa-shopping-cart"></button>
+        <form action="/warenkorb">
+            <button type="submit" value="+" class="fa fa-shopping-cart" onclick="addToCart({ name: 'Sigma Male Theory', author: 'Thomas Drew', price: 19.99, quantity: 1, id: 'book001', img: 'https://i.imgur.com/1dyulDD.jpeg'})" > </button>
+        </form>
+
+        <script>
+            function addToCart(item) {
+                let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+                //loop through the cart to check if the item already exists
+                for (let i = 0; i < cart.length; i++) {
+                    if (cart[i].id === item.id) {
+                        cart[i].quantity++;
+                        localStorage.setItem('cart', JSON.stringify(cart));
+                        return;
+                    }
+                }
+                //if the item doesn't exist in the cart
+
+                item.quantity = 1;
+                cart.push(item);
+                localStorage.setItem('cart', JSON.stringify(cart));
+            }
+        </script>
+      <!--<button class="fa fa-shopping-cart"></button> -->
     </div>
   </div>
 
