@@ -3,3 +3,5 @@ autor:Tandrew 8
 stichworte: Lebensqualität, Selbstbewusstsein, Erfolg, Unternehmertum, Innovation
 beschreibung: Begleiten Sie den jungen Mann Tandrew Ate auf seiner Reise, wie er erkennt, dass er ein Sigma Male ist und lernt, wie er seine Stärken nutzen kann, um mehr Erfolg im Leben zu haben in "The Sigma Male". Dieses Buch erzählt die Geschichte von Tandrew und seiner Entwicklung von einem unzufriedenen und unerfüllten Mann zu einem selbstbewussten und erfolgreichen Individuum, das seine Unabhängigkeit und Selbstbestimmung lebt. Lernen Sie von Tandrews Erfahrungen und Entdecken Sie die Möglichkeiten die Sigma Male Denkweise bietet, mit "The Sigma Male" 
 bildlink:https://i.imgur.com/sRxZV5m.png
+preis:19.99
+isbn:9783642514148

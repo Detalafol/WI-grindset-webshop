@@ -5,8 +5,12 @@ app = Flask(__name__)
 filespath = __file__.rsplit("\\",1)[0] + "\\files\\"
 
 @app.route('/')
+def welcome():
+    return render_template("welcome.html", title="Willkommen")
+
+@app.route('/angebot')
 def home():
-    return render_template("home.html", title="Webshop")
+    return render_template("home.html", title="Angebot")
 
 @app.route('/warenkorb')
 def warenkorb():
@@ -32,7 +36,8 @@ def produkt(produktname):
 
 
     return render_template("produkt.html", title=produktname, titel=data['titel'], autor=data['autor'],
-                           stichworte=data['stichworte'], beschreibung=data['beschreibung'], bildlink=data['bildlink'])
+                           stichworte=data['stichworte'], beschreibung=data['beschreibung'], bildlink=data['bildlink'],
+                           preis=data['preis'], isbn=data['isbn'])
 
 
 

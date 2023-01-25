@@ -3,3 +3,5 @@ autor:Tandrew Ate
 stichworte:Sigma Denkweise, Selbstoptimierung, Erfolgsstrategien, Zielerreichung, Problemlösung
 beschreibung:Entdecken Sie die Welt des Sigma Male in "Sigma Male Theory". Dieses Buch untersucht die Charakteristika und Verhaltensweisen von Männern, die sich nicht in die traditionellen Rollen von Alpha- und Beta-Männern einordnen. Es erklärt, wie Sigma-Männer ihre Unabhängigkeit und Selbstbestimmung leben und trotzdem erfolgreich in ihrem Beruf und ihren Beziehungen sind. Lernen Sie, wie Sie Ihre Stärken als Sigma Male nutzen und sich von gängigen gesellschaftlichen Erwartungen befreien können, mit "Sigma Male Theory". 
 bildlink:https://i.imgur.com/1dyulDD.jpeg
+preis:19.99
+isbn:9783645211448

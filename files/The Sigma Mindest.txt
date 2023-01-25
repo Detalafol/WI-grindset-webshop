@@ -3,3 +3,5 @@ autor:Tandrew Ate
 stichworte:Entscheidungsfindung, Persönlichkeitsentwicklung, Menschenführung, Produktivität, Denkweise-Optimierung
 beschreibung:Erfahren Sie in "The Sigma Mindset" wie Sie Ihr Potenzial voll ausschöpfen und effektiver als je zuvor arbeiten können. Dieses Buch zeigt Ihnen, wie Sie Ihre Fähigkeiten und Ihre Denkweise optimieren, um erfolgreicher in Beruf und Privatleben zu sein. Lernen Sie, wie Sie Ziele erreichen, Probleme lösen und Ihre Träume verwirklichen können, indem Sie die Methoden der Sigma-Denkweise anwenden. Beginnen Sie jetzt Ihre Reise zum Erfolg mit "The Sigma Mindset".
 bildlink:https://i.imgur.com/vM1QX6w.jpeg
+preis:19.99
+isbn:9783642151448

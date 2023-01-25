@@ -3,3 +3,5 @@ autor:Mandrew Mate
 stichworte:Träume verwirklichen, Unabhängigkeit, Selbstbestimmung, Karriere, Persönliches Wachstum
 beschreibung: Verstehen Sie die Bedeutung und die Anwendung von Wirtschaftsinformatik in der modernen Wirtschaft mit "Warum Wirtschaftsinformatik?". Dieses Buch erklärt die grundlegenden Konzepte und Methoden der Wirtschaftsinformatik und zeigt, wie sie in der Praxis eingesetzt werden, um Unternehmen zu unterstützen und ihren Erfolg zu steigern. Sie werden erfahren, wie Wirtschaftsinformatik die Geschäftsprozesse verbessert, die Entscheidungsfindung unterstützt und die Effizienz erhöht. Lernen Sie, warum Wirtschaftsinformatik eine unerlässliche Disziplin für die Karriere im Business-Bereich ist mit "Warum Wirtschaftsinformatik?". 
 bildlink:https://i.imgur.com/4hNf7jO.jpeg
+preis:19.99
+isbn:9783642115448

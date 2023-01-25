@@ -1,0 +1,124 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+
+  <style>
+    .explore{
+        width: 90%;
+        align-self: center;
+        margin: 0 10px;
+    }
+    .text button {
+        display: block; /* Button als Block-Element anzeigen */
+        margin: 0 auto; /* Button mittig ausrichten */
+    }
+
+    .vert-card:hover{
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0,0,0,.12), 0 4px 8px rgba(0,0,0,.06);
+        z-index: 1;
+        position:relative;
+    }
+    .card:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        height: 5em;
+        width: 100%;
+    }
+    .card {
+        background-color: dimgray;
+        color: white;
+        padding: 0;
+        float:left;
+        margin:10px;
+        border:none;
+        height: 100%;
+    }
+    .card-image-top{
+        height: 60%;
+        object-fit: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .card-image-top-img{
+        box-shadow: inset 5px 0 5px #222, -5px 0 5px #222;
+        height: 100%;
+    }
+    .row{
+        height: 30rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+    [class*="col-"] {
+        height: 100%;
+    }
+    a, a:hover, a:focus, a:active {
+        text-decoration: none;
+        color: inherit;
+    }
+
+  </style>
+
+<body>
+<div class="container text">
+  <div style="text-align: center;"><h1>Willkommen bei Grindshop.WIF!</h1></div>
+<br>
+<p>Willkommen im Grindshop.WIF, dem Shop für Bücher zum Thema Wirtschaftsinformatik und Persönlichkeitsentwicklung. Wir bieten Ihnen eine große Auswahl an Ratgebern, Lehrbüchern und inspirierenden Lektüren, die Ihnen dabei helfen, sich in Ihrem Beruf und im Leben weiterzuentwickeln. Stöbern Sie durch unsere Kategorien und finden Sie die Bücher, die am besten zu Ihren Bedürfnissen passen. Wir wünschen Ihnen viel Freude beim Einkaufen und beim Lernen mit unseren Produkten.</p>
+  <a href="{{url_for('home')}}"><button class="explore btn btn-success">Produkte entdecken</button></a>
+  <br>
+</div>
+
+<br>
+
+<div class="row">
+    <div class="col-lg-4">
+        <a href="{{url_for('produkt', produktname='Wirtschaftsinformatik für dummies')}}">
+            <div class="card vert-card col">
+                <div class="card-image-top">
+                  <img src="https://i.imgur.com/qE4chHK.png" class="card-image-top-img" alt="Kein Bild">
+                </div>
+                <div class="card-body" style="overflow-y:scroll">
+                    <h5 class="card-title">Wirtschaftsinformatik für dummies</h5>
+                    <i class="card-text">Stephan Thesmann, Werner Burkard</i>
+                    <p></p>
+                    <p class="card-text">Informationssysteme verstehen und managen, Organisationsstrukturen und Abläufe durchschauen, IT-Lösungen konzipieren und implementieren</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-4">
+        <a href="{{url_for('produkt', produktname='Wirtschaftsinformatik in Wissenschaft und Praxis')}}">
+            <div class="card vert-card col">
+                <div class="card-image-top">
+                  <img src="https://i.imgur.com/7YzmKdN.png" class="card-image-top-img" alt="Kein Bild">
+                </div>
+                <div class="card-body" style="overflow-y:scroll">
+                    <h5 class="card-title">Wirtschaftsinformatik in Wissenschaft und Praxis</h5>
+                    <i class="card-text">Walter Brenner, Thomas Hess</i>
+                    <p></p>
+                    <p class="card-text">Festschrift für Hubert Österle</p>
+                </div>
+            </div>
+        </a>
+    </div>
+    <div class="col-lg-4">
+        <a href="{{url_for('produkt', produktname='Wirtschaftsinformatik')}}">
+            <div class="card vert-card col">
+                <div class="card-image-top">
+                  <img src="https://i.imgur.com/Ae2kQCs.png" class="card-image-top-img" alt="Kein Bild">
+                </div>
+                <div class="card-body" style="overflow-y:scroll">
+                    <h5 class="card-title">Wirtschaftsinformatik</h5>
+                    <i class="card-text">Wolfgang Lassmann</i>
+                    <p></p>
+                    <p class="card-text">Nachschlagewerk für Studium und Praxis</p>
+                </div>
+            </div>
+        </a>
+    </div>
+  </div>
+<br>
+{% endblock %}
+
